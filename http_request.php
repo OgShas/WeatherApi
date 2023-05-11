@@ -1,5 +1,4 @@
 <?php
-
 $curentWeather='';
 $city=$_GET['city'];
 $base_url = 'http://api.weatherapi.com/v1';
@@ -26,6 +25,24 @@ $data=json_decode($response,true);
 curl_close($ch);
 
 
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="src/style.css">
+
+    <title>Weather</title>
+</head>
+<body>
+
+<?php
+
 echo "Weather in ";
 echo  $data['location']['region'];
 echo "</br>" ;
@@ -37,3 +54,6 @@ echo $data['current']['temp_c'];
 echo " C";
 
 ?>
+
+</body>
+</html>
